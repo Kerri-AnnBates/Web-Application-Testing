@@ -22,14 +22,19 @@ export default function Dashboard() {
     }
     
     const handleFoul = () => {
-
+        let strikeNum = strikeCount;
+        
+        if(strikeNum < 2) {
+            setStrikeCount(strikeNum += 1);
+        }
     }
+
     return (
         <div>
             <Display strikeCount={strikeCount} ballCount={ballCount} />
             <button onClick={handleStrikeCount}>Strike</button>
             <button onClick={handleBallCount}>Ball</button>
-            <button>Foul</button>
+            <button onClick={handleFoul}>Foul</button>
             <button onClick={handleHit}>Hit</button>
         </div>
     )
