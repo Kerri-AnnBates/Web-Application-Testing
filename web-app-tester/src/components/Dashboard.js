@@ -8,12 +8,21 @@ export default function Dashboard() {
 
     const handleStrikeCount = () => {
         let newCount = strikeCount;
-        setStrikeCount(newCount += 1);
+        if(newCount < 3) {
+            setStrikeCount(newCount += 1);
+        } else {
+            setStrikeCount(0);
+        }
     }
 
     const handleBallCount = () => {
         let newCount = ballCount
-        setBallCount(newCount+=1)
+        
+        if (newCount < 4) {
+            setBallCount(newCount += 1)
+        } else {
+            setBallCount(0)
+        }
     }
 
     const handleHit = () => {
