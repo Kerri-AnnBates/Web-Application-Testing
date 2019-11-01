@@ -7,7 +7,7 @@ export default function Dashboard() {
     const [ballCount, setBallCount] = useState(0);
 
     const handleStrikeCount = () => {
-        if (strikeCount < 3) {
+        if (strikeCount < 2) {
             setStrikeCount(strikeCount + 1);
         } else {
             setStrikeCount(0);
@@ -15,7 +15,7 @@ export default function Dashboard() {
     }
 
     const handleBallCount = () => {
-        if (ballCount < 4) {
+        if (ballCount < 3) {
             setBallCount(ballCount + 1)
         } else {
             setBallCount(0)
