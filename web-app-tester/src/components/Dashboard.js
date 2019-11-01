@@ -7,19 +7,16 @@ export default function Dashboard() {
     const [ballCount, setBallCount] = useState(0);
 
     const handleStrikeCount = () => {
-        let newCount = strikeCount;
-        if(newCount < 3) {
-            setStrikeCount(newCount += 1);
+        if (strikeCount < 3) {
+            setStrikeCount(strikeCount + 1);
         } else {
             setStrikeCount(0);
         }
     }
 
     const handleBallCount = () => {
-        let newCount = ballCount
-        
-        if (newCount < 4) {
-            setBallCount(newCount += 1)
+        if (ballCount < 4) {
+            setBallCount(ballCount + 1)
         } else {
             setBallCount(0)
         }
@@ -41,10 +38,10 @@ export default function Dashboard() {
     return (
         <div>
             <Display strikeCount={strikeCount} ballCount={ballCount} />
-            <button onClick={handleStrikeCount}>Strike</button>
-            <button onClick={handleBallCount}>Ball</button>
-            <button onClick={handleFoul}>Foul</button>
-            <button onClick={handleHit}>Hit</button>
+            <button data-testid="strike" onClick={handleStrikeCount}>Strike</button>
+            <button data-testid="ball" onClick={handleBallCount}>Ball</button>
+            <button data-testid="foul" onClick={handleFoul}>Foul</button>
+            <button data-testid="hit" onClick={handleHit}>Hit</button>
         </div>
     )
 }
